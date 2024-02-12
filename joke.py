@@ -1,6 +1,7 @@
 import requests
 
 
+
 def get_joke(category, flags):
     url = f'https://v2.jokeapi.dev/joke/{category}'
     params = {'blacklistFlags': flags}

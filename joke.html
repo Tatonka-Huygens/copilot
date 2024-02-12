@@ -2,57 +2,8 @@
 <html>
 <head>
     <title>Joke Generator</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-        }
-        .column {
-            flex: 45%;
-            padding: 10px;
-        }
-        .columns {
-            display: flex;
-            justify-content: space-around;
-            margin-left: 20px;
-        }
-        .title {
-            background-color: red;
-            color: white;
-            padding: 10px;
-            font-weight: bold;
-            max-width: 70%;
-        }
-        .grand-title {
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 2em;
-            font-weight: bold;
-        }
-    </style>
-    <script>
-        function getJoke() {
-            var category = document.getElementById('category').value;
-            fetch('http://localhost:5000/display_joke/' + category)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('joke').innerText = data.joke;
-                });
-            return false;
-        }
-    </script>
-    <script>        
-        function searchJoke(event) {
-            event.preventDefault();
-            var term = document.getElementById('term').value;
-            fetch('http://localhost:5000/search_joke/' + term)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('search-joke').innerText = data.joke;
-                });
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="joke.js"></script>
 </head>
 <body>
     <h1 class="grand-title">Welcome to the Joke Generator</h1>

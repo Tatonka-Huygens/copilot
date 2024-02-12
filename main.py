@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from joke import get_joke, search_jokes
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:8000"}})
 
